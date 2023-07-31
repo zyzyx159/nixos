@@ -70,7 +70,7 @@
 
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm = {
-    enable = false;
+    enable = true;
 #    background = "/home/zyzyx/Downloads/Black.png";
   };
 
@@ -116,6 +116,8 @@
     packages = with pkgs; [
       firefox
     #  thunderbird
+    #  zsh-autocomplete
+    #  zsh-autosuggestions
     ];
   };  
 
@@ -128,6 +130,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     curl
     cmatrix
+    brave
     git
     htop
     i3
@@ -135,15 +138,39 @@
     neovim
     nerdfonts
     oh-my-zsh
-    terminator 
+    starship
+    terminator
+    tmux 
     wget
     zsh
+    zsh-autosuggestions
+    zsh-autocomplete
   ];
 
-  programs.zsh.enable = true;
-
+  programs = {
+    git = {
+      enable = true;
+      userName = "Daniel Stellmon";
+      userEmail = "Dstellm@gmail.com";
+    };
+    starship = {
+      enable = true;
+    };
+    zsh = {
+      enable = true;
+      ohMyZsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "autosuggestions"
+          "autocomplete"
+        ];
+      };
+    };
+  };
+  
   #enable fonts
-  fonts.fondDir.enable = true;
+  fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
     nerdfonts
     font-awesome

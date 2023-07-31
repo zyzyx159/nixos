@@ -143,7 +143,7 @@
   programs.zsh.enable = true;
 
   #enable fonts
-  fonts.fondDir.enable = true;
+  fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
     nerdfonts
     font-awesome

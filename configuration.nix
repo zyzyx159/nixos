@@ -148,11 +148,6 @@
   ];
 
   programs = {
-    git = {
-      enable = true;
-      userName = "Daniel Stellmon";
-      userEmail = "Dstellm@gmail.com";
-    };
     starship = {
       enable = true;
     };

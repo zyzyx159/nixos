@@ -25,5 +25,5 @@ sudo ln -s ~/git/nixos/configuration.nix /etc/nixos/configuration.nix
 # *** this script is designed for single user systems. Changes will need to be made if you want more than one home-manager config.***
 rm ~/.config/home-manager/home.nix
 ln -s ~/git/nixos/home.nix ~/.config/home-manager/home.nix
-
+
 sudo nixos-rebuild switch

@@ -40,19 +40,21 @@
     gnumake
     nitrogen
     nodejs_20
-    oh-my-zsh
     python311
     python311Packages.pip
     tmux    
   ];
 
   programs.zsh = {
-    oh-my-zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -al";
+    };
+    zplug = {
       enable = true;
       plugins = [
-        "git"
-        "zsh-autosuggestions"
-        "zsh-autocomplete"
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "marlonrichert/zsh-autocomplete"; }
       ];
     };
   };
@@ -65,6 +67,11 @@
     enable = true;
     userName = "Daniel Stellmon";
     userEmail = "DStellm@gmail.com";
+  };
+  
+  programs.neovim = {
+    enable = true;
+    extraLuaConfig = lib.fileContents /home/zyzyx/git/dotFiles/Neovim/config.lua;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -80,9 +87,9 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    "/home/zyzyx/.config/tmux/tmux.conf".source = /home/zyzyx/git/dotFiles/tmux/tmux.conf;
+#    "/home/zyzyx/.config/tmux/tmux.conf".source = /home/zyzyx/git/dotFiles/tmux/tmux.conf;
 #    "/home/zyzyx/.zshrc".source = /home/zyzyx/git/dotFiles/zsh/.zshrc;
-    "/home/zyzyx/.config/lvim/config.lua".source = /home/zyzyx/git/dotFiles/lvim/config.lua;
+#    "/home/zyzyx/.config/lvim/config.lua".source = /home/zyzyx/git/dotFiles/lvim/config.lua;
   };
 
   # You can also manage environment variables but you will have to manually

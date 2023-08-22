@@ -2,13 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, ... }: 
 
 {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
     ];
+  
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -46,7 +49,6 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-
     desktopManager = {
       xterm.enable = false;
     };
@@ -54,6 +56,11 @@
     displayManager = {
       defaultSession = "none+i3";
     };
+
+#    displayManager.ly = {
+#      enable = true;
+#      defaultUser = "zyzyx";
+#    };
 
     windowManager.i3 = {
       enable = true;
@@ -69,10 +76,10 @@
 #  services.xserver.displayManager.lightdm.background = #000000;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm = {
-    enable = true;
+#  services.xserver.displayManager.lightdm = {
+#    enable = true;
 #    background = "/home/zyzyx/Downloads/Black.png";
-  };
+#  };
 
 #  services.xserver.displayManager.lightdm.greeters.gtk.theme.name = "Adwaita"
 #services.xserver.desktopManager.xfce.enable = true;
@@ -143,24 +150,20 @@
     tmux 
     wget
     zsh
-    zsh-autosuggestions
-    zsh-autocomplete
+#    zsh-autosuggestions
+#    zsh-autocomplete
   ];
 
   programs = {
     starship = {
       enable = true;
     };
-    zsh = {
+ 
+   zsh = {
       enable = true;
-      ohMyZsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "autosuggestions"
-          "autocomplete"
-        ];
-      };
+#      ohMyZsh = {
+#        enable = true;
+#      };
     };
   };
   

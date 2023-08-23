@@ -66,8 +66,8 @@
       command_timeout = 1000;
       format = "[╭╴](white)$env_var $all[╰─](white)$character";
       character = {
-        success_symbol = '[󰜃 ](bright-cyan)';
-        error_symbol = '[](red)';
+        success_symbol = "[󰜃 ](bright-cyan)";
+        error_symbol = "[](red)";
       };
       username = {
         style_user = "white";
@@ -93,17 +93,17 @@
         style = "bold green";
       };
       git_status = {
-        format = '[\($all_status$ahead_behind\)]($style) ';
+        format = "[\($all_status$ahead_behind\)]($style) ";
         style = "bold green";
         conflicted = "🏳";
         up_to_date = " ";
         untracked = " ";
-        ahead = "⇡${count}";
-        diverged = "⇕⇡${ahead_count}⇣${behind_count}";
-        behind = "⇣${count}";
+        ahead = "⇡\${count}";
+        diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
+        behind = "⇣\${count}";
         stashed = " ";
         modified = " ";
-        staged = '[++\($count\)](green)';
+        staged = "[++\($count\)](green)";
         renamed = "襁 ";
         deleted = " ";
       };

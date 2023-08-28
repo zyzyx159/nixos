@@ -11,6 +11,7 @@
     cargo
     git
     gnumake
+    neovim
     nitrogen
     nodejs_20
     python311
@@ -36,8 +37,6 @@
     enable = true;
     settings = pkgs.lib.importTOML "/home/zyzyx/git/dotFiles/starship/starship.toml";
   };
-
-
 
   programs.git = {
     enable = true;

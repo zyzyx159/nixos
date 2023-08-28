@@ -142,7 +142,6 @@
     htop
     i3
     neofetch
-    neovim
     nerdfonts
     oh-my-zsh
     starship

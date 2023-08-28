@@ -34,18 +34,11 @@
 
   programs.starship = {
     enable = true;
-    settings = {
-      add_newline = false;
-      command_timeout = 1000;
-      format = "$nix_shell";
-      nix_shell = {
-        symbol = "nix";
-        format = "[<$symbol> ]($style)";
-        style = "blue bold";
-      };
-    };
+    settings = pkgs.lib.importTOML "/home/zyzyx/git/dotFiles/starship/starship.toml";
   };
-  
+
+
+
   programs.git = {
     enable = true;
     userName = "Daniel Stellmon";

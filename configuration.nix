@@ -144,7 +144,7 @@
     neofetch
     nerdfonts
     oh-my-zsh
-    starship
+#    starship
     terminator
     tmux 
     wget
@@ -154,9 +154,9 @@
   ];
 
   programs = {
-    starship = {
-      enable = true;
-    };
+#    starship = {
+#      enable = true;
+#    };
  
    zsh = {
       enable = true;

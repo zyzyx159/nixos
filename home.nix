@@ -11,12 +11,10 @@
     cargo
     git
     gnumake
-    neovim
     nitrogen
     nodejs_20
     python311
     python311Packages.pip
-    starship
     tmux
   ];
 
@@ -48,7 +46,14 @@
   programs.tmux = {
     enable = true;
   };
-  
+ 
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    extraLuaConfig = builtins.readFile ./nvim/config.lua;
+	};
+
   home.file = {
   };
 

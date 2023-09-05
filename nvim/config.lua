@@ -13,7 +13,7 @@ opt.clipboard = "unnamedplus" -- remember to install xclip or wl-clipboard
 -- set leader key
 g.mapleader = ' '
 
--- set custom key mappings
+-- set custom key mappings function
 local function map(mode, lhs, rhs, opts)
   local options = { noremap=true, silent=true }
   if opts then
@@ -22,8 +22,10 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- set custom key mappings
 map('n', '<up>', 'gk')
 map('n', '<down>', 'gj')
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
+vim.cmd.colorscheme "catppuccin"
